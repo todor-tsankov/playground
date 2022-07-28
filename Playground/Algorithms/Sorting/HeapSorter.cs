@@ -12,7 +12,7 @@ namespace Algorithms.Sorting
             for (int i = arr.Length - 1; i >= 0; i--)
             {
                 arr[i] = root.Value;
-                Heapify(root);
+                this.Heapify(root);
             }
         }
 
