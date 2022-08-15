@@ -10,7 +10,7 @@
             }
 
             var resultIndex = 0;
-            var result = new int[this.Length(arr.Length - startIndex)][];
+            var result = new int[(int)Math.Pow(2, arr.Length - startIndex) - 1][];
 
             var current = arr[startIndex];
             result[resultIndex] = new int[] { current };
@@ -34,31 +34,6 @@
             for (int i = 0; i < arr.Length; i++)
             {
                 result[i + 1] = arr[i];
-            }
-
-            return result;
-        }
-
-        public int Length(int numberOfElements)
-        {
-            var result = 0;
-            var permutations = this.Factorial(numberOfElements);
-
-            for (int i = 1; i <= numberOfElements; i++)
-            {
-                result += permutations / (this.Factorial(i) * this.Factorial(numberOfElements - i));
-            }
-
-            return result;
-        }
-
-        private int Factorial(int number)
-        {
-            var result = 1;
-
-            for (int i = number; i > 1; i--)
-            {
-                result *= i;
             }
 
             return result;
